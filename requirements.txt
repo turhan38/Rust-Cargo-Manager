@@ -1,0 +1,6 @@
+# Install with pip
+# Note: tkinter, shutil, and webbrowser are part of the Python standard library (not pip-installed).
+# On Linux, install tkinter via system package manager if missing (e.g., 'sudo apt install python3-tk').
+
+requests>=2.31,<3
+toml>=0.10.2,<1
