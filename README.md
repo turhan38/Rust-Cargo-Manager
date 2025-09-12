@@ -4,6 +4,8 @@ A simple **Cargo.toml dependency manager** built with Tkinter. It lets you selec
 
 > Note: The app writes directly to your `Cargo.toml`. It automatically creates a `.backup` file as a safety copy.
 
+---
+
 ## Features
 
 - Select and parse `Cargo.toml`
@@ -14,9 +16,16 @@ A simple **Cargo.toml dependency manager** built with Tkinter. It lets you selec
 - Status bar and progress indicator
 - Automatic backup (`Cargo.toml.backup`)
 
-## Screenshot (example)
+---
 
-> The GUI comes with two panels: left side for existing dependencies, right side for search/addition. (You can optionally add a screenshot to your repo: `docs/screenshot.png`).
+## Screenshots
+
+Here are some screenshots of the application in action:
+
+### Main Window
+![Main Window](docs/App.png)
+
+---
 
 ## Installation
 
@@ -36,6 +45,8 @@ pip install -r requirements.txt
 python cargoManager.py
 ```
 
+---
+
 ## Usage
 
 1. Click **Select Cargo.toml** and choose a Rust project file.
@@ -47,6 +58,8 @@ python cargoManager.py
 
 > Changes are written directly to `Cargo.toml` and a `.backup` is created.
 
+---
+
 ## Architecture & Technical Notes
 
 - GUI: `tkinter` + `ttk`
@@ -56,13 +69,7 @@ python cargoManager.py
 - Main class: `CargoManager` (inherits from `tk.Tk`)
 - Progress bar shows network request delays for large dependency lists
 
-## Known Limitations / Future Improvements
-
-- Currently adds latest version only (`max_version`); could support semantic version specifiers (`^`, `~`, `=`, `>=`).
-- Feature: bulk update (upgrade all dependencies to latest)
-- Better error handling for network failures
-- Option to remember last opened project path
-- Could add tests and screenshots
+---
 
 ## Development
 
@@ -75,6 +82,8 @@ pip install -r requirements.txt
 
 For code quality, consider adding: `ruff`, `black`
 
+---
+
 ## Packaging (optional)
 
 You can build a standalone executable with `pyinstaller`:
@@ -84,40 +93,8 @@ pyinstaller --noconfirm --onefile --windowed cargoManager.py
 ```
 The binary will be inside `dist/`.
 
-## GitHub Upload Steps
-
-To publish the project on GitHub:
-
-```bash
-# 1) Initialize repository (if not already)
-git init
-
-# 2) Create .gitignore (example)
-echo "__pycache__/\n*.pyc\n.venv/\n.env\n.DS_Store\ndist/\nbuild/\n*.spec\nCargo.toml.backup" > .gitignore
-
-# 3) Add and commit files
-git add .
-git commit -m "Initial commit: Rust Cargo Manager (Python GUI)"
-
-# 4) Create a new empty repo on GitHub
-# 5) Link and push
-git remote add origin https://github.com/YOUR_USERNAME/rust-cargo-manager-gui.git
-git branch -M main
-git push -u origin main
-```
-
-## License (Suggested)
-
-MIT License is recommended for open-source. Add a `LICENSE` file:
-
-```
-MIT License
-
-Copyright (c) 2025 <Your Name>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy...
-```
-
 ---
 
-This README is tailored for the `cargoManager.py` project.
+## Author
+
+Developed by [İbrahim Turhan Bayraktar](https://github.com/turhan38)
